@@ -1,0 +1,53 @@
+﻿@model IEnumerable<B4P.Models.Good>
+@{
+}
+<div class="top-main">
+    <div><p class="main-popular">Товары</p></div>
+    <nav class="navbar">
+        <div class="container">
+            @foreach (var item in Model)
+            {
+                <form method="post" action="AddGood">
+                    <div class="col-3 goods">
+                        <div class="product-item">
+                            <div class="product-img">
+                                <a href="">
+                                    <img src="@item.GoodPhotoUrl">
+                                </a>
+                            </div>
+                            <div class="product-list">
+                                <h3>@item.GoodName</h3>
+                                <h2>@item.GoodDescription</h2>
+                                <input type="hidden" value="@item.GoodsId" name="goodId" />
+                                <div class="stars">
+                                    <ul class="size-box">
+                                        <li><p class="size-box-value">s</p></li>
+                                        <li><p class="size-box-value">m</p></li>
+                                        <li><p class="size-box-value">l</p></li>
+                                        <li><p class="size-box-value">xl</p></li>
+                                        <li><p class="size-box-value">xxl</p></li>
+                                    </ul>
+                                </div>
+                                <div class="actions">
+                                    <div class="add-to-cart">
+                                        @*<a href="" class="cart-button">В корзину</a>*@
+                                        <input type="submit" name="name" value="В корзину" class="cart-button" />
+                                    </div>
+                                    <div class="add-to-cart">
+                                        @{
+                                            decimal? price;
+                                            if (item.GoodDiscount != null)
+                                                price = (item.GoodPrice - (item.GoodPrice / 100 * item.GoodDiscount));
+                                            else price = item.GoodPrice;
+                                        }
+                                        <p>@price</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                }
+            </div>
+    </nav>
+</div>

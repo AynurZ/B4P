@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - B4P</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar bg-white  head-top">
+            <div class="container">
+                <div class="col-2">
+                    <a href="">
+                        <img src="/images/main_logo.png">
+                    </a>
+                </div>
+                <div class="col-2"><span class="phone"></span><a href="#">+7 (950) 321-64-89</a></div>
+                <div class="col-2"><span class="mail"></span><a href="#">hot-dog@shop.ru</a></div>
+                <div class="col-3"><a href="#" class="phone_button_black">Заказать звонок</a></div>
+                <div class="col-2"><span class="cart"></span><a asp-controller="home" asp-action="basket">Корзина</a></div>
+                <div class="col-1"><span class="user"></span><a asp-action="Login" asp-controller="Account">Войти</a></div>
+            </div>
+        </nav>
+        <nav class="navbar head-bottom">
+            <div class="container menu-list">
+                <div class="col-1"><a asp-controller="home" asp-action="index">Главная</a></div>
+                <div class="col-1"><a asp-controller="home" asp-action="action">Акции</a></div>
+                <div class="col-1"><a asp-controller="home" asp-action="goods">Товары</a></div>
+                <div class="col-2"><a asp-controller="home" asp-action="paymenttype">Способы оплаты</a></div>
+                <div class="col-1"><a asp-controller="home" asp-action="delivery">Доставка</a></div>
+                <div class="col-2"></div>
+                <div class="col-3 btn-search"><form asp-action="search" asp-controller="home" method="post"><input type="submit" class="btn-search-img" id="search-btn" value="" /><input type="text" name="goods" asp-controller="home" asp-action="search" placeholder="Поиск товара" onclick="" id="search" /></form></div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="footer footer-color">
+        <nav class="navbar footer-lists">
+            <div class="container">
+                <div class="col-3">
+                    <ul class="list list-white">
+                        <li><img src="~/images/logo_black.png"></li>
+                        <li><span class="phone"></span> <a href="#">+7 (950) 321-64-89</a></li>
+                        <li><span class="mail"></span> <a href="#">hot-dog@shop.ru</a></li>
+                        <li><a href="#" class="phone_button">Заказать звонок</a></li>   
+                    </ul> 
+                </div>
+                <div class="col-1"></div>
+                <div class="col-2">
+                    <ul class="list">
+                        <li><p>Главная</p></li>
+                        <li><p>Акции</p></li>
+                        <li><p>Товары</p></li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <ul class="list">
+                        <li><p>Способ оплаты</p></li>
+                        <li><p>Доставка</p></li>
+                        <li><p>Контакты</p></li>
+                    </ul>
+                </div>
+                <div class="col-4"></div>
+            </div>
+        </nav>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+<script>
+    var input = document.getElementById('search');
+
+    input.oninput = function () {
+        var btn = document.getElementById('search-btn');
+        btn.classList.add("btn-search-img-vis");
+    };
+    input.focus = function () {
+        if (input == null) {
+            var btn = document.getElementById('search-btn');
+            btn.style.opacity = 0;
+        };
+    };
+</script>

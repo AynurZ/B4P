@@ -1,0 +1,53 @@
+﻿@model IEnumerable<B4P.Models.Good>
+<div class="top-main">
+    <div>
+        <div><p class="main-popular">Акции на товары</p></div>
+        <nav class="navbar">
+            <div class="container">
+                @foreach (var item in Model)
+                {
+                    <div class="col-3 goods">
+                        <div class="product-item">
+                            <div class="product-img">
+                                <a href="">
+                                    <img src="@item.GoodPhotoUrl">
+                                </a>
+                            </div>
+                            <div class="product-list">
+                                <h3>@item.GoodName</h3>
+                                <h2>@item.GoodDescription</h2>
+                                <div class="stars">
+                                    <ul class="size-box">
+                                        <li><p class="size-box-value">s</p></li>
+                                        <li><p class="size-box-value">m</p></li>
+                                        <li><p class="size-box-value">l</p></li>
+                                        <li><p class="size-box-value">xl</p></li>
+                                        <li><p class="size-box-value">xxl</p></li>
+                                    </ul>
+                                </div>
+                                <div class="actions">
+                                    <div class="add-to-cart">
+                                        <a href="" class="cart-button">В корзину</a>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <p>@(item.GoodPrice-(item.GoodPrice/100*item.GoodDiscount))</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="col-3 show_all">
+                    <div>
+                        <h2 class="show_all_h2">Все товары</h2><h3 class="show_all_h3">Перейти в каталог</h3>
+                    </div>
+                    <div>
+                        <a href="">
+                            <img src="/images/show_all_pic.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>   
