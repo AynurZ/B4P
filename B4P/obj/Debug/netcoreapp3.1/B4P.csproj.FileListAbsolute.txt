@@ -82,7 +82,11 @@ C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Home\Goo
 C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Home\Paymenttype.cshtml.g.cs
 C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Home\Delivery.cshtml.g.cs
 C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Home\Basket.cshtml.g.cs
-C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\B4P.csprojAssemblyReference.cache
 C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Home\Personal.cshtml.g.cs
 C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Home\Search.cshtml.g.cs
 C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Home\OrderModel.cshtml.g.cs
+C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Personal\Comments.cshtml.g.cs
+C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Personal\Data.cshtml.g.cs
+C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Personal\Orders.cshtml.g.cs
+C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Personal\_ChangePas.cshtml.g.cs
+C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\B4P.csprojAssemblyReference.cache

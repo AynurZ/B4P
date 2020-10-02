@@ -19,8 +19,38 @@
                 <div class="col-2"><span class="phone"></span><a href="#">+7 (950) 321-64-89</a></div>
                 <div class="col-2"><span class="mail"></span><a href="#">hot-dog@shop.ru</a></div>
                 <div class="col-3"><a href="#" class="phone_button_black">Заказать звонок</a></div>
-                <div class="col-2"><span class="cart"></span><a asp-controller="home" asp-action="basket">Корзина</a></div>
-                <div class="col-1"><span class="user"></span><a asp-action="Login" asp-controller="Account">Войти</a></div>
+                @{
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="col-1"><span class="cart"></span><a asp-controller="home" asp-action="basket">Корзина</a></div>
+                    }
+                    else
+                    {
+                        <div class="col-2"><span class="cart"></span><a asp-controller="home" asp-action="basket">Корзина</a></div>
+                    }
+                }
+                @{
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="col-2 dropdown">
+                            <span class="user"></span><a href="" class="submenu-link">Личный кабинет</a>
+                            <div class="dropdown-content">
+                                <ul class="submenu">
+                                    <li><a asp-controller="Personal" asp-action="Orders">Мои закзаы</a></li>
+                                    <li><a asp-controller="Personal" asp-action="Comments">Мои коментарии</a></li>
+                                    <li><a asp-controller="Personal" asp-action="Data">Мои данные</a></li>
+                                    <li><a asp-controller="Personal" asp-action="">Избранное</a></li>
+                                    <li><a asp-controller="Personal" asp-action="Logout">Выйти</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-1"><span class="user"></span><a asp-action="Login" asp-controller="Account">Войти</a></div>
+                    }
+                }
+
             </div>
         </nav>
         <nav class="navbar head-bottom">
@@ -48,8 +78,8 @@
                         <li><img src="~/images/logo_black.png"></li>
                         <li><span class="phone"></span> <a href="#">+7 (950) 321-64-89</a></li>
                         <li><span class="mail"></span> <a href="#">hot-dog@shop.ru</a></li>
-                        <li><a href="#" class="phone_button">Заказать звонок</a></li>   
-                    </ul> 
+                        <li><a href="#" class="phone_button">Заказать звонок</a></li>
+                    </ul>
                 </div>
                 <div class="col-1"></div>
                 <div class="col-2">
@@ -89,4 +119,17 @@
             btn.style.opacity = 0;
         };
     };
+</script>
+<script>
+    var input = document.getElementById('password');
+    var div_pas = document.getElementById('password_div');
+    input.onclick = function () {
+        div_pas.style.display === 'none' ? div_pas.style.display = 'block' : div_pas.style.display = 'none'
+    };
+
+    var btn_pas_back = document.getElementById('password-back');
+
+    btn_pas_back.onclick = function () {
+        div_pas.style.display === 'block' ? div_pas.style.display = 'none' : div_pas.style.display = 'block'
+    }
 </script>

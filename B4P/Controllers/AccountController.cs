@@ -13,6 +13,7 @@ namespace B4P.Controllers
     public class AccountController : Controller
     {
         private B4PTestContext _context;
+
         public AccountController(B4PTestContext context)
         {
             _context = context;

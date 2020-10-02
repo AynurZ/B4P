@@ -1,0 +1,59 @@
+﻿@model IEnumerable<B4P.Models.Orders>
+<div class="top-main">
+    <div><p class="main-popular">Заказы</p></div>
+    <table class="order-table">
+        @{ for (int i = 0; i < 2; i++) {
+            <tr class="order-line">
+                <td class="order-line-left">
+                    <table class="order-basket">
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li><h2>@item.OrderDate</h2></li>
+                                    <li><p>@item.OrderSum</p></li>
+                                    @{
+                                        if (@item.StatusId == 1)
+                                        {
+                                            <li><p style="color: #6fac61;">Доставлен</p></li>
+                                        }
+                                        else
+                                        {
+                                            <li><p style="color:black;">В заказе</p></li>
+                                        }
+
+                                    }
+                                </ul>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="submit" value="Подробнее о заказе" class="btn btn-outline-dark" />
+                                </div>
+                            </td>
+                        </tr>
+                        }
+                    </table>
+                </td>
+                <td>
+                    <table class="order-images">
+                        <tr>
+                            <td><img src="/images/logo.png"></td>
+                            <td><img src="/images/logo.png"></td>
+                            <td><img src="/images/logo.png"></td>
+                        </tr>
+                    </table>
+                    <ul>
+                        @*@foreach (var item in Model?.Goods)
+        {*@
+                        
+                        
+                        
+                        @*}*@
+                    </ul>
+                </td>
+            </tr>
+            }
+        }
+    </table>
+</div>

@@ -1,0 +1,51 @@
+﻿@model B4P.Models.Users
+<div class="top-main">
+    <div><p class="main-popular">Личные данные</p></div>
+    <div class="data-form">
+        <form asp-action="Change" asp-controller="Personal" method="post" asp-anti-forgery="true">
+            <div class="validation" asp-validation-summary="ModelOnly" />
+            <div>
+                <div>
+                    <label>Ваш Email</label><br />
+                    <input type="text" name="email" value="@Model.UserMail" />
+                </div>
+                <div>
+                    <label>Ваш Логин</label><br />
+                    <input type="text" name="login" value="@Model.UserLogin" />
+                </div>
+                <div>
+                    <label>Ваше Имя</label><br />
+                    <input type="text" name="name" value="@Model.UserName" />
+                </div>
+                <div>
+                    <label>Ваша фамилию</label><br />
+                    <input type="text" name="family" value="@Model.UserFamily" />
+                </div>
+                <div>
+                    <label>Ваше отчество</label><br />
+                    <input type="text" name="lastname" value="@Model.UserLastName" />
+                </div>
+                <div>
+                    <label>Ваша дата рождения</label><br />
+                    <input type="text" name="birthday" value="@Model.UserBirthday" />
+                </div>
+                <div>
+                    <label>Ваш номер телефона</label><br />
+                    <input type="text" name="phone" value="@Model.UserPhone" /><br />
+                </div>
+                <div>
+                    <label>Ваша скидка : @Model.UserDiscount</label> <br />
+                </div>
+                <div>
+                    <input type="submit" value="Изменить" class="btn btn-outline-dark" />
+                </div>
+            </div>
+        </form>
+        <div>
+            <label>Ваш пароль</label><br />
+            <input type="submit" value="Изменение пароля" class="btn btn-outline-dark" id="password" />
+
+        </div>
+        @await Html.PartialAsync("_ChangePas", new B4P.ViewModels.ChangePasModel())
+    </div>
+</div>

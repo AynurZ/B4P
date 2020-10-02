@@ -1,0 +1,18 @@
+﻿@model B4P.ViewModels.ChangePasModel
+    <div id="password_div" style="display:none; margin-top:10px;" class="data-form">
+        <form asp-action="ChangePas" asp-controller="Personal" method="post">
+            <div>
+                <label asp-for="OldPassword">Ваш старый Пароль</label><br />
+                <input type="password" asp-for="OldPassword" value="" />
+                <span asp-validation-for="OldPassword" />
+                <label asp-for="Password">Ваш новый Пароль</label><br />
+                <input type="password" asp-for="Password" value="" />
+                <span asp-validation-for="Password" />
+                <label asp-for="ConfirmPassword">Повторите Пароль</label><br />
+                <input type="password" asp-for="ConfirmPassword" value="Пароль" /><br />
+                <span asp-validation-for="ConfirmPassword" />
+                <input type="submit" value="Изменить пароль" class="btn btn-outline-dark" /><br />
+            </div>
+        </form>
+        <input type="submit" value="Назад" class="btn btn-outline-dark" id="password-back" />
+    </div>    

@@ -1,0 +1,38 @@
+﻿@model B4P.ViewModels.CommentModel
+<div class="top-main">
+    <div><p class="main-popular">Ваши комментарии:</p></div>
+    <table class="order-table">
+                <tr class="order-line">
+                    <td class="order-line-left">
+                        <table class="order-basket">
+                            @foreach (var item in Model.Goods)
+                            {
+                                <tr>
+                                    <td>
+                                        <ul>
+                                            <li><h2>@item.GoodName</h2></li>
+                                            <li><img src="@item.GoodPhotoUrl"></li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input type="submit" value="Перейти к товару" class="btn btn-outline-dark" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </td>
+                    <td>
+                        <table class="order-images">
+                            @foreach (var item in Model.Comment)
+                            {
+                                <tr>
+                                    <td><p>@item</p></td>
+                                </tr>
+                            }
+                        </table>
+                    </td>
+                </tr>
+    </table>
+</div>
