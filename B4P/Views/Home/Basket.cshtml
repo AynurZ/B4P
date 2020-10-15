@@ -2,44 +2,52 @@
 <div class="top-main">
     <div class="basket">
         <div><p class="main-popular">У вас в корзине следующие товары</p></div>
-        <table>
-            <tr>
-                <td>
-                    <table class="basket1">
-                        @foreach (var item in Model?.Goods)
-                        {
-                            <tr>
-                                <td>
-                                    <div class="product-img-basket">
-                                        <a href="">
-                                            <img src="@item.GoodPhotoUrl">
-                                        </a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="product-list">
-                                        <h3>@item.GoodName</h3>
-                                    </div>
-                                    <div class="product-list">
-                                        <p>@item.GoodDescription</p>
-                                    </div>
-                                </td>
-                            </tr>
-                        }
-                    </table>
-                </td>
-                <td>
-                    <ul>
-                        @foreach (var item in Model.Amount)
-                        {
-                            <li class="product-list list-amount"><p>Количество: @item</p></li>
-                        }
-                    </ul>
-                </td>
-            </tr>
-        </table>
-        <div class="basket_pay">
-            <a href="" asp-controller="home" asp-action="Pay" class="cart-button">Оплатить</a>
+        @if (Model != null)
+        {
+            <table>
+                <tr>
+                    <td>
+                        <table class="basket1">
+
+                            @foreach (var item in Model?.Goods)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="product-img-basket">
+                                            <a href="">
+                                                <img src="@item.GoodPhotoUrl">
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="product-list">
+                                            <h3>@item.GoodName</h3>
+                                        </div>
+                                        <div class="product-list">
+                                            <p>@item.GoodDescription</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </td>
+                    <td>
+                        <ul>
+                            @foreach (var item in Model.Amount)
+                            {
+                                <li class="product-list list-amount"><p>Количество: @item</p></li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        }
+        else
+        {
+            <div><p class="main-popular">Товаров нет</p></div>
+        }
+            @*<div class="basket_pay">
+                <a href="" asp-controller="home" asp-action="Pay" class="cart-button">Оплатить</a>
+            </div>*@
         </div>
-    </div>
 </div>   

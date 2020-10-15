@@ -73,8 +73,6 @@ C:\Users\aynur\source\repos\B4P\B4P\bin\Debug\netcoreapp3.1\runtimes\unix\lib\ne
 C:\Users\aynur\source\repos\B4P\B4P\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\aynur\source\repos\B4P\B4P\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\aynur\source\repos\B4P\B4P\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\B4P.csproj.CoreCompileInputs.cache
-C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\B4P.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Home\Action.cshtml.g.cs
@@ -90,3 +88,11 @@ C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Personal
 C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Personal\Orders.cshtml.g.cs
 C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Personal\_ChangePas.cshtml.g.cs
 C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\B4P.csprojAssemblyReference.cache
+C:\Users\aynur\source\repos\B4P\B4P\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\aynur\source\repos\B4P\B4P\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\aynur\source\repos\B4P\B4P\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Home\SendMessage.cshtml.g.cs
+C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\Razor\Views\Home\Good.cshtml.g.cs
+C:\Users\aynur\source\repos\B4P\B4P\bin\Debug\netcoreapp3.1\NETCore.MailKit.dll
+C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\B4P.csproj.CoreCompileInputs.cache
+C:\Users\aynur\source\repos\B4P\B4P\obj\Debug\netcoreapp3.1\B4P.MvcApplicationPartsAssemblyInfo.cache

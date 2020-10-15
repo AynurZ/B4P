@@ -1,0 +1,20 @@
+﻿<div class="top-main">
+    <div><p class="main-popular">Отправка сообщения</p></div>
+    <div class="data-form">
+        <form asp-action="SendMessage" asp-controller="Home" method="post" asp-anti-forgery="true">
+            <div>
+                <div>
+                    <label>Введите Email для обратной связи</label><br />
+                    <input type="text" name="email" value="" />
+                </div>
+                <div>
+                    <label>Текст сообщения</label><br />
+                    <textarea name="text"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Отправить" class="btn btn-outline-dark" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

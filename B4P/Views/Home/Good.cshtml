@@ -1,0 +1,40 @@
+﻿@model B4P.Models.Good
+<div><p class="main-popular">Товар:</p></div>
+    <div class="col-3 goods">
+        <div class="product-item">
+            <div class="product-img">
+                <a href="">
+                    <img src="@Model.GoodPhotoUrl">
+                </a>
+            </div>
+            <div class="product-list">
+                <h3>@Model.GoodName</h3>
+                <h2>@Model.GoodDescription</h2>
+                <input type="hidden" value="@Model.GoodsId" name="goodId" />
+                <div class="stars">
+                    <ul class="size-box">
+                        <li><p class="size-box-value">s</p></li>
+                        <li><p class="size-box-value">m</p></li>
+                        <li><p class="size-box-value">l</p></li>
+                        <li><p class="size-box-value">xl</p></li>
+                        <li><p class="size-box-value">xxl</p></li>
+                    </ul>
+                </div>
+                <div class="actions">
+                    <div class="add-to-cart">
+                        @*<a href="" class="cart-button">В корзину</a>*@
+                        <input type="submit" name="name" value="В корзину" class="cart-button" />
+                    </div>
+                    <div class="add-to-cart">
+                        @{
+                            decimal? price;
+                            if (Model.GoodDiscount != null)
+                                price = (Model.GoodPrice - (Model.GoodPrice / 100 * Model.GoodDiscount));
+                            else price = Model.GoodPrice;
+                        }
+                        <p>@price</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using B4P.ViewModels;
 using System.Security.Cryptography;
 using System.Text;
+using B4P.Services;
 
 namespace B4P.Controllers
 {
@@ -47,11 +48,17 @@ namespace B4P.Controllers
             var goods = await _context.Good.ToListAsync();
             return View(goods); ;
         }
+        public async Task<IActionResult> Good(int id)
+        {
+            var goods = await _context.Good.Where(P=>P.GoodsId== id).FirstOrDefaultAsync();
+            return View(goods); ;
+        }
         //[Authorize(Policy = "OnlyForAdmins")]
         public IActionResult PaymentType()
         {
             return View();
         }
+        [Authorize]
         public async Task<IActionResult> Basket()
         {
             //var goodsInBasket = _context.Basket.Where(p => p.UserId == int.Parse(User.Identity.Name)).ToList();
@@ -79,16 +86,17 @@ namespace B4P.Controllers
             Basket goodInBasket = await _context.Basket.FirstOrDefaultAsync(u => u.GoodsId == goodId);
             if (goodInBasket == null)
             {
-                // добавляем пользователя в бд
                 goodInBasket = new Basket { UserId = int.Parse(User.Identity.Name), GoodsId = goodId, SizeId = 1, Amount = 1 };
                 _context.Basket.Add(goodInBasket);
                 await _context.SaveChangesAsync();
+                RedirectToAction("Goods", "Home");
             }
             else
             {
                 goodInBasket.Amount++;
                 _context.Basket.Update(goodInBasket);
                 await _context.SaveChangesAsync();
+                RedirectToAction("Goods", "Home");
             }
 
         }
@@ -173,9 +181,23 @@ namespace B4P.Controllers
         {
             int i = items.Count();
             return i;
-        } 
+        }
 
-
+        public IActionResult SendMessage()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> SendMessage(string email, string text)
+        {
+            if (email == null)
+            {
+                email = User.Identity.Name;//Исправить кдейм на почту, и везде подправить
+            }
+            EmailService emailService = new EmailService();
+            await emailService.SendMailAsync(email, "Тема письма", text);
+            return RedirectToAction("Index");
+        }
         //public IActionResult Search(string goods)
         //{
         //    return View();
